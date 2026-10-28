@@ -1,0 +1,5 @@
+dataset_id,dataset_name,provider,resource_type,task_or_domain,languages,official_url,licence_status,access_status,review_status,last_reviewed,notes
+DS001,IndicCorp,AI4Bharat,Text corpus,Language modelling and NLP,Multiple Indian languages,https://indicnlp.ai4bharat.org/corpora/,Needs verification,Public resource page,Needs review,,Verify version and usage terms
+DS002,IndicNLP Corpus,AI4Bharat,Text corpus and related resources,NLP and text classification,Multiple Indian languages,https://github.com/AI4Bharat/indicnlp_corpus,Needs verification,Public repository,Needs review,,Check licences of individual datasets
+DS003,IndicLLMSuite,AI4Bharat,Dataset collection,Pretraining and instruction fine-tuning,Multiple Indian languages,https://github.com/AI4Bharat/IndicLLMSuite,Needs verification,Public repository,Needs review,,Verify each dataset and its terms separately
+DS004,IndicNLG Suite,AI4Bharat,Dataset collection,Text generation and evaluation,Multiple Indian languages,https://indicnlp.ai4bharat.org/indicnlg-suite/,Needs verification,Public resource page,Needs review,,Confirm task coverage and individual dataset terms
