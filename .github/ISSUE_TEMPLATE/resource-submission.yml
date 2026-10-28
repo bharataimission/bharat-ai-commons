@@ -1,0 +1,94 @@
+name: Resource Submission
+description: Propose an AI dataset, model, benchmark, or language resource for the Bharat AI Commons catalogue.
+title: "[Resource]: "
+labels: ["resource-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve Bharat AI Commons. Please provide verifiable information. A submission is a proposal, not an endorsement or confirmation that a resource has been reviewed.
+
+  - type: dropdown
+    id: resource_type
+    attributes:
+      label: Resource type
+      description: Select the category that best fits the resource.
+      options:
+        - Dataset
+        - Model
+        - Benchmark or evaluation
+        - Indian-language resource
+        - Tool or utility
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: resource_name
+    attributes:
+      label: Resource name
+      description: Provide the official name.
+      placeholder: Official resource name
+    validations:
+      required: true
+
+  - type: input
+    id: official_url
+    attributes:
+      label: Official source URL
+      description: Link to the official project, repository, or documentation.
+      placeholder: https://
+    validations:
+      required: true
+
+  - type: input
+    id: provider
+    attributes:
+      label: Developer or provider
+      description: Organisation, research group, institution, or community.
+    validations:
+      required: true
+
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Relevance to Bharat AI Commons
+      description: Explain how this resource supports Indian languages or Indian contexts.
+      placeholder: Describe the resource and its potential value.
+    validations:
+      required: true
+
+  - type: input
+    id: languages
+    attributes:
+      label: Languages covered
+      description: List documented languages, or write "Not verified".
+    validations:
+      required: true
+
+  - type: input
+    id: licence
+    attributes:
+      label: Licence and usage terms
+      description: Provide the exact licence and a source, or write "Not verified".
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence and notes
+      description: Share documentation, research papers, evaluation results, or known limitations.
+      placeholder: Include source links and distinguish verified facts from assumptions.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: declarations
+    attributes:
+      label: Submission checks
+      options:
+        - label: I have provided an official or credible source for this resource.
+          required: true
+        - label: I understand that the resource's licence and claims must be reviewed before its entry is marked verified.
+          required: true
