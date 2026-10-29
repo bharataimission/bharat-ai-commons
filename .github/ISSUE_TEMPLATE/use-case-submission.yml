@@ -1,0 +1,132 @@
+
+name: Submit an Open Source AI Use Case
+description: Propose an idea, share research, or document an existing implementation.
+title: "[Use Case]: "
+labels:
+  - use-case
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to Bharat AI Commons.
+        Please do not submit personal, confidential, or sensitive data.
+        Clearly distinguish proposed ideas from demonstrated results.
+
+  - type: input
+    id: use_case_title
+    attributes:
+      label: Use-case title
+      description: Give the use case a clear, concise name.
+      placeholder: Multilingual agricultural advisory
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sector
+    attributes:
+      label: Sector
+      options:
+        - Agriculture and food systems
+        - FinTech and financial inclusion
+        - Education and skills
+        - Research and scientific computing
+        - Healthcare and public health
+        - MedTech and medical devices
+        - Life sciences and biotechnology
+        - Space research and geospatial AI
+        - Public good and governance
+        - Manufacturing and Industry 4.0
+        - Climate, environment and energy
+        - Mobility and logistics
+        - Retail and commerce
+        - Legal technology
+        - Cybersecurity and digital trust
+        - Accessibility and assistive technology
+        - Media, culture and Indian languages
+        - Cross-sector AI
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: maturity
+    attributes:
+      label: Current maturity
+      options:
+        - Proposed idea
+        - Research
+        - Prototype
+        - Validated solution
+        - Production deployment
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and intended beneficiaries
+      description: What problem exists, and who would benefit?
+      placeholder: Describe the problem and its context.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed or existing AI approach
+      description: Explain the approach, implementation, or idea.
+    validations:
+      required: true
+
+  - type: input
+    id: geography
+    attributes:
+      label: Geography
+      description: State, Union Territory, India-wide, or other geography.
+      placeholder: Maharashtra, India
+    validations:
+      required: true
+
+  - type: input
+    id: languages
+    attributes:
+      label: Languages
+      description: Languages supported or required, if known.
+      placeholder: Marathi, Hindi, English
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and references
+      description: Link to research, demonstrations, evaluation results, or source material.
+      placeholder: Add URLs and explain what each source supports.
+    validations:
+      required: true
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: Related open-source resources
+      description: Add links to datasets, models, benchmarks, code, and licences where available.
+      placeholder: Provide URLs, or explain what is not yet available.
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks, limitations, and responsible AI
+      description: Note privacy, safety, bias, licensing, or other relevant considerations.
+      placeholder: Write "Not yet assessed" if unknown.
+
+  - type: textarea
+    id: collaboration
+    attributes:
+      label: Contribution or collaboration sought
+      description: What help, expertise, or resources are needed?
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: Contributor declaration
+      options:
+        - label: I have provided accurate information to the best of my knowledge and have not knowingly shared confidential or unauthorised material.
+          required: true
