@@ -43,4 +43,28 @@ let stateResources={};let geoFeatures=[];function normalize(s){return (s||'').no
 function selectState(name){const c=counts(name);$('selectedState').innerHTML=`<h4>${name}</h4><p><b>${c.total}</b> documented state-linked record(s)</p><div class="stat"><span>Datasets</span><strong>${c.dataset}</strong></div><div class="stat"><span>Models</span><strong>${c.model}</strong></div><div class="stat"><span>Benchmarks</span><strong>${c.benchmark}</strong></div><p><b>Language signals:</b> ${c.languages.length?c.languages.join(', '):'No state-level coverage recorded in the current catalogue files'}</p><p class="note">The current CSV schema does not yet include state-level coverage for most records. Grey states mean “not documented in this catalogue”, not “no resources exist”. Do not interpret this as a measure of language availability.</p>`;document.querySelectorAll('.state').forEach(el=>el.style.stroke=el.dataset.state===name?'#09284b':'#fff')}
 $('mapType').addEventListener('change',()=>{if(geoFeatures.length)renderMap()});const GEO_URL='https://cdn.jsdelivr.net/gh/udit-001/india-maps-data@2884453/geojson/india.geojson';fetch(GEO_URL).then(r=>{if(!r.ok)throw Error('Boundary file unavailable');return r.json()}).then(data=>{geoFeatures=(data.features||[]).filter(f=>f.geometry);if(!geoFeatures.length)throw Error('No state features found');renderMap()}).catch(err=>{$('mapstage').innerHTML='<div style="max-width:440px;text-align:center;padding:24px;color:#647087"><b style="color:#172033">State map could not load.</b><p>The map needs an internet connection to load the boundary GeoJSON. Please refresh or check the source link.</p><a class="textlink" href="https://github.com/udit-001/india-maps-data">Open map data source ↗</a></div>'});
 loadCatalogues().catch(err=>{$('dataStatus').textContent='Could not load GitHub catalogue files. Check internet access and repository paths.';console.error(err)});
-</script></body></html>
+</script>
+<script>
+/* Bharat AI Commons: keep visitors on the Commons by opening external destinations in a new tab.
+   Same-page anchors and same-origin links retain normal navigation. */
+document.addEventListener('click', function (event) {
+  const link = event.target.closest('a[href]');
+  if (!link || event.defaultPrevented || event.button !== 0 ||
+      event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+  let destination;
+  try {
+    destination = new URL(link.href, window.location.href);
+  } catch (_) {
+    return;
+  }
+
+  if (destination.protocol !== 'http:' && destination.protocol !== 'https:') return;
+  if (destination.origin === window.location.origin) return;
+
+  event.preventDefault();
+  window.open(destination.href, '_blank', 'noopener,noreferrer');
+}, true);
+</script>
+
+</body></html>
